@@ -50,17 +50,46 @@ const title = "Contact";
       }
       main {
         margin-top: 70px;
-        height: calc(100vh - 70px);
+        min-height: calc(100vh - 70px);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-align: center;
+        padding: 2rem;
       }
-      a.back-link {
+      form {
+        background-color: #222;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      input, textarea {
+        padding: 0.75rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      input[type="submit"] {
+        background-color: #00C781;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #00a86b;
+      }
+      label {
+        font-weight: bold;
+        margin-bottom: 0.2rem;
+      }
+      .back-link {
+        margin-top: 2rem;
         color: #ccc;
         text-decoration: none;
-        margin-top: 2rem;
       }
     </style>
   </head>
@@ -69,9 +98,28 @@ const title = "Contact";
       <div class="logo">Recording Services</div>
       <a href="/contact" class="contact-button">Contact</a>
     </header>
+
     <main>
       <h1>Contact</h1>
-      <p>You can reach me at <a href="mailto:you@example.com" style="color: #00C781;">you@example.com</a></p>
+
+      <!-- ✅ FORM START -->
+      <form action="https://formspree.io/f/xdkgreoe" method="POST">
+  <input type="hidden" name="_redirect" value="/thanks" />
+
+
+        <label for="email">Your Email</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="service">What kind of recording are you looking for?</label>
+        <input type="text" name="service" id="service" placeholder="Live, Studio, Field..." />
+
+        <label for="message">Tell me more</label>
+        <textarea name="message" id="message" rows="5" required></textarea>
+
+        <input type="submit" value="Send Message" />
+      </form>
+      <!-- ✅ FORM END -->
+
       <a href="/" class="back-link">← Back to Home</a>
     </main>
   </body>
