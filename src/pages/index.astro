@@ -6,12 +6,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} >
     <title>Home</title>
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- <head> -->
+  <!-- <meta charset="UTF-8" /> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+
   <!--Code below for index structure from chat gpt-->
    <title>Recording Services</title>
    <style>
@@ -61,17 +62,25 @@
         background-color: #00a86b;
       }
 
-      main {
-        margin-top: 70px;
+      /* This wrapper allows content to grow and keeps footer at bottom */
+      .content-wrapper {
         flex: 1;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        padding-top: 70px; /* space for fixed header */
         min-height: 0;
+        overflow: hidden;
+      }
+
+      main {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        overflow: auto;
       }
 
       section {
-        flex: 1 1 33%;
+        flex: 1;
         min-height: 300px;
         display: flex;
         align-items: center;
@@ -79,8 +88,6 @@
         font-size: 2rem;
         color: white;
         text-shadow: 1px 1px 2px black;
-        cursor: pointer;
-        text-align: center;
       }
 
       section a {
@@ -111,6 +118,7 @@
         text-align: center;
         padding: 1rem;
         font-size: 0.9rem;
+        flex-shrink: 0;
       }
 
       @media (max-width: 768px) {
@@ -125,25 +133,30 @@
     </style>
   </head>
   <body>
+    <!-- Fixed Header -->
     <header>
       <a href="/" class="logo">Recording Services</a>
       <a href="/contact" class="contact-button">Contact</a>
     </header>
 
-    <main>
-      <section id="live"><a href="/live">Live Recording</a></section>
-      <section id="studio"><a href="/studio">Studio Recording</a></section>
-      <section id="field"><a href="/field">Field Recording</a></section>
-    </main>
+    <!-- Content below header and above footer -->
+    <div class="content-wrapper">
+      <main>
+        <section id="live"><a href="/live">Live Recording</a></section>
+        <section id="studio"><a href="/studio">Studio Recording</a></section>
+        <section id="field"><a href="/field">Field Recording</a></section>
+      </main>
+    </div>
 
+    <!-- Sticky Footer -->
     <footer>
       <p>© Combat Audio 2025</p>
     </footer>
   </body>
 </html>
 
-  </body>
-</html>
+  <!-- </body> -->
+<!-- </html> -->
 
 
 <!-- ---
