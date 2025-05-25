@@ -19,13 +19,16 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     html {
       scroll-behavior: smooth;
-    }
-    body {
       height: 100%;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      overflow-x: hidden;
+      overflow: hidden;
+      height: 100vh;
     }
 
     /* HEADER */
@@ -98,33 +101,44 @@
     /* MAIN LAYOUT */
     main {
       display: flex;
-      flex-direction: row;
-      margin-top: 70px;
       height: calc(100vh - 70px);
+      margin-top: 70px;
     }
 
     section {
       flex: 1;
-      color: white;
-      font-size: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      color: white;
+      font-size: 2rem;
       cursor: pointer;
       transition: background 0.3s;
+      text-align: center;
+      text-shadow: 1px 1px 2px black;
     }
 
     #live {
-      background-color: #FF5E5E; /* red tone */
+      background-color: #FF5E5E;
     }
 
     #studio {
-      background-color: #4C9AFF; /* blue tone */
+      background-color: #4C9AFF;
     }
 
     #field {
-      background-color: #00C781; /* green tone */
+      background-color: #00C781;
+    }
+
+    /* Make entire section clickable via inner <a> */
+    section a {
+      color: inherit;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* RESPONSIVE */
@@ -140,7 +154,7 @@
 </head>
 <body>
 
-  <!-- HIDDEN CHECKBOX FOR MENU -->
+  <!-- HIDDEN MENU TOGGLE -->
   <input type="checkbox" id="menu-toggle" />
 
   <!-- HEADER -->
@@ -160,11 +174,17 @@
     <a href="#field">Field Recording</a>
   </div>
 
-  <!-- MAIN CONTENT (SECTIONS WITH INTERNAL NAVIGATION) -->
+  <!-- MAIN CONTENT -->
   <main>
-    <a href="#live" style="text-decoration: none;"><section id="live">Live Recording</section></a>
-    <a href="#studio" style="text-decoration: none;"><section id="studio">Studio Recording</section></a>
-    <a href="#field" style="text-decoration: none;"><section id="field">Field Recording</section></a>
+    <section id="live">
+      <a href="#live">Live Recording</a>
+    </section>
+    <section id="studio">
+      <a href="#studio">Studio Recording</a>
+    </section>
+    <section id="field">
+      <a href="#field">Field Recording</a>
+    </section>
   </main>
 
 </body>
