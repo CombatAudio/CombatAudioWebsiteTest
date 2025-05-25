@@ -12,91 +12,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--Code below for index structure from chat gpt-->
-  <title>Recording Services</title>
+   <title>Recording Services</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
+    html, body {
       height: 100%;
       font-family: Arial, sans-serif;
+      overflow-x: hidden;
     }
+
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
-      width: 100%;
-      background-color: #222;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background-color: #111;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0 1.5rem;
       z-index: 1000;
     }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* HIDDEN TOGGLE CHECKBOX */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* MENU ICON */
     .menu-icon {
-      cursor: pointer;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 1.2rem;
+      cursor: pointer;
     }
-    .menu-icon div {
+
+    .menu-icon span {
+      display: block;
       width: 25px;
       height: 3px;
       background-color: white;
     }
-    main {
-      margin-top: 70px; /* Adjust based on header height */
+
+    /* NAV PANEL */
+    .nav-panel {
+      position: fixed;
+      top: 70px;
+      right: -250px;
+      width: 250px;
+      height: calc(100% - 70px);
+      background-color: #222;
+      color: white;
+      padding: 1rem;
+      transition: right 0.3s ease;
+      z-index: 999;
     }
-    section {
+
+    #menu-toggle:checked ~ .nav-panel {
+      right: 0;
+    }
+
+    .nav-panel a {
+      display: block;
+      margin: 1rem 0;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* MAIN LAYOUT */
+    main {
+      display: flex;
+      flex-direction: row;
+      margin-top: 70px;
       height: calc(100vh - 70px);
+    }
+
+    section {
+      flex: 1;
+      color: white;
+      font-size: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
-      color: white;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s;
+      text-shadow: 1px 1px 3px black;
     }
+
     #live {
-      background-color: #333;
+      background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80');
     }
+
     #studio {
-      background-color: #555;
+      background-image: url('https://images.unsplash.com/photo-1586880244401-ea9f3b720f2b?auto=format&fit=crop&w=800&q=80');
     }
+
     #field {
-      background-color: #777;
+      background-image: url('https://images.unsplash.com/photo-1619983081563-3a8bff9fa53f?auto=format&fit=crop&w=800&q=80');
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+      section {
+        height: calc((100vh - 70px) / 3);
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- HIDDEN CHECKBOX FOR MENU -->
+  <input type="checkbox" id="menu-toggle" />
+
+  <!-- HEADER -->
   <header>
     <div class="logo">Recording Services</div>
-    <div class="menu-icon" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
   </header>
 
-  <main>
-    <section id="live">
-      Live Recording
-    </section>
-    <section id="studio">
-      Studio Recording
-    </section>
-    <section id="field">
-      Field Recording
-    </section>
-  </main>
+  <!-- NAVIGATION PANEL -->
+  <div class="nav-panel">
+    <a href="#live">Live Recording</a>
+    <a href="#studio">Studio Recording</a>
+    <a href="#field">Field Recording</a>
+  </div>
 
-  <script>
-    function toggleMenu() {
-      alert('Menu toggled! You can implement dropdown or side nav here.');
-    }
-  </script>
+  <!-- MAIN CONTENT -->
+  <main>
+    <section id="live">Live Recording</section>
+    <section id="studio">Studio Recording</section>
+    <section id="field">Field Recording</section>
+  </main>
 
 </body>
 </html>
