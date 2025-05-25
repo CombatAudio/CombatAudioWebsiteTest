@@ -21,8 +21,17 @@
         padding: 0;
         height: 100%;
         font-family: Arial, sans-serif;
+      }
+
+      body {
         display: flex;
         flex-direction: column;
+      }
+
+      .page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
       header {
@@ -33,11 +42,6 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 1.5rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
       }
 
       .logo {
@@ -62,25 +66,15 @@
         background-color: #00a86b;
       }
 
-      /* This wrapper allows content to grow and keeps footer at bottom */
-      .content-wrapper {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding-top: 70px; /* space for fixed header */
-        min-height: 0;
-        overflow: hidden;
-      }
-
       main {
-        display: flex;
         flex: 1;
+        display: flex;
         flex-direction: row;
-        overflow: auto;
+        flex-wrap: wrap;
       }
 
       section {
-        flex: 1;
+        flex: 1 1 33%;
         min-height: 300px;
         display: flex;
         align-items: center;
@@ -100,17 +94,9 @@
         justify-content: center;
       }
 
-      #live {
-        background-color: #FF5E5E;
-      }
-
-      #studio {
-        background-color: #4C9AFF;
-      }
-
-      #field {
-        background-color: #00C781;
-      }
+      #live { background-color: #FF5E5E; }
+      #studio { background-color: #4C9AFF; }
+      #field { background-color: #00C781; }
 
       footer {
         background-color: #111;
@@ -118,7 +104,6 @@
         text-align: center;
         padding: 1rem;
         font-size: 0.9rem;
-        flex-shrink: 0;
       }
 
       @media (max-width: 768px) {
@@ -133,25 +118,22 @@
     </style>
   </head>
   <body>
-    <!-- Fixed Header -->
-    <header>
-      <a href="/" class="logo">Recording Services</a>
-      <a href="/contact" class="contact-button">Contact</a>
-    </header>
+    <div class="page">
+      <header>
+        <a href="/" class="logo">Recording Services</a>
+        <a href="/contact" class="contact-button">Contact</a>
+      </header>
 
-    <!-- Content below header and above footer -->
-    <div class="content-wrapper">
       <main>
         <section id="live"><a href="/live">Live Recording</a></section>
         <section id="studio"><a href="/studio">Studio Recording</a></section>
         <section id="field"><a href="/field">Field Recording</a></section>
       </main>
-    </div>
 
-    <!-- Sticky Footer -->
-    <footer>
-      <p>© Combat Audio 2025</p>
-    </footer>
+      <footer>
+        <p>© Combat Audio 2025</p>
+      </footer>
+    </div>
   </body>
 </html>
 
