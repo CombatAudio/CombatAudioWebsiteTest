@@ -23,12 +23,6 @@
         overflow: hidden;
       }
 
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* Header */
       header {
         position: fixed;
         top: 0;
@@ -67,9 +61,8 @@
 
       main {
         display: flex;
-        flex: 1;
-        margin-top: 70px;
         height: calc(100vh - 70px);
+        margin-top: 70px;
       }
 
       section {
@@ -118,13 +111,13 @@
   </head>
   <body>
 
-    <!-- Header with Contact Button -->
+    <!-- Header on every page -->
     <header>
       <div class="logo">Recording Services</div>
       <a href="/contact" class="contact-button">Contact</a>
     </header>
 
-    <!-- Main Content -->
+    <!-- Page content -->
     <main>
       <section id="live"><a href="/live">Live Recording</a></section>
       <section id="studio"><a href="/studio">Studio Recording</a></section>
