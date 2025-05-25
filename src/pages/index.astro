@@ -22,10 +22,10 @@
       }
 
       body {
+        margin: 0;
         height: 100vh;
         font-family: Arial, sans-serif;
-        overflow: hidden;
-        margin: 0;
+        overflow-x: hidden;
       }
 
       header {
@@ -41,6 +41,7 @@
         align-items: center;
         padding: 0 1.5rem;
         z-index: 1000;
+        overflow: hidden;
       }
 
       .logo {
@@ -57,12 +58,13 @@
         flex-direction: column;
         justify-content: space-between;
         height: 1.2rem;
+        width: 25px;
         cursor: pointer;
       }
 
       .menu-icon span {
         display: block;
-        width: 25px;
+        width: 100%;
         height: 3px;
         background-color: white;
       }
@@ -102,11 +104,21 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
         font-size: 2rem;
+        color: white;
         text-align: center;
         text-shadow: 1px 1px 2px black;
         cursor: pointer;
+      }
+
+      section a {
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       #live {
@@ -119,16 +131,6 @@
 
       #field {
         background-color: #00C781;
-      }
-
-      section a {
-        color: white;
-        text-decoration: none;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
 
       @media (max-width: 768px) {
@@ -144,8 +146,10 @@
   </head>
   <body>
 
+    <!-- Hidden checkbox toggle -->
     <input type="checkbox" id="menu-toggle" />
 
+    <!-- Header -->
     <header>
       <div class="logo">Recording Services</div>
       <label for="menu-toggle" class="menu-icon">
@@ -155,17 +159,21 @@
       </label>
     </header>
 
+    <!-- Slide-out nav -->
     <div class="nav-panel">
+      <a href="/">Home</a>
       <a href="/live">Live Recording</a>
       <a href="/studio">Studio Recording</a>
       <a href="/field">Field Recording</a>
     </div>
 
+    <!-- Main page sections -->
     <main>
       <section id="live"><a href="/live">Live Recording</a></section>
       <section id="studio"><a href="/studio">Studio Recording</a></section>
       <section id="field"><a href="/field">Field Recording</a></section>
     </main>
+
 
 </body>
 </html>
