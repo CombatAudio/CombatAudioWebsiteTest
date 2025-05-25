@@ -14,13 +14,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--Code below for index structure from chat gpt-->
    <title>Recording Services</title>
-    <style>
+   <style>
       html, body {
         margin: 0;
         padding: 0;
         height: 100%;
         font-family: Arial, sans-serif;
-        overflow-x: hidden;
+        overflow: hidden;
       }
 
       body {
@@ -49,53 +49,22 @@
         font-weight: bold;
       }
 
-      /* Hamburger */
-      #menu-toggle {
-        display: none;
-      }
-
-      .menu-icon {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 20px;
-        width: 25px;
-        cursor: pointer;
-      }
-
-      .menu-icon span {
-        display: block;
-        height: 3px;
-        background-color: white;
-        border-radius: 2px;
-      }
-
-      /* Nav Panel */
-      .nav-panel {
-        position: fixed;
-        top: 70px;
-        right: -250px;
-        width: 250px;
-        height: calc(100% - 70px);
-        background-color: #222;
+      .contact-button {
+        background-color: #00C781;
         color: white;
-        padding: 1rem;
-        transition: right 0.3s ease;
-        z-index: 999;
-      }
-
-      #menu-toggle:checked + header + .nav-panel {
-        right: 0;
-      }
-
-      .nav-panel a {
-        display: block;
-        margin: 1rem 0;
-        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
         text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
       }
 
-      /* Main Layout */
+      .contact-button:hover {
+        background-color: #00a86b;
+      }
+
       main {
         display: flex;
         flex: 1;
@@ -149,36 +118,23 @@
   </head>
   <body>
 
-    <!-- 1. Checkbox toggle -->
-    <input type="checkbox" id="menu-toggle" />
-
-    <!-- 2. Header (next element after checkbox) -->
+    <!-- Header with Contact Button -->
     <header>
       <div class="logo">Recording Services</div>
-      <label for="menu-toggle" class="menu-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+      <a href="/contact" class="contact-button">Contact</a>
     </header>
 
-    <!-- 3. Nav panel (must be next sibling of header) -->
-    <div class="nav-panel">
-      <a href="/">Home</a>
-      <a href="/live">Live Recording</a>
-      <a href="/studio">Studio Recording</a>
-      <a href="/field">Field Recording</a>
-    </div>
-
-    <!-- 4. Page content -->
+    <!-- Main Content -->
     <main>
       <section id="live"><a href="/live">Live Recording</a></section>
       <section id="studio"><a href="/studio">Studio Recording</a></section>
       <section id="field"><a href="/field">Field Recording</a></section>
     </main>
 
+  </body>
+</html>
 
-</body>
+  </body>
 </html>
 
 
