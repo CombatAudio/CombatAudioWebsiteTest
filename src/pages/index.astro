@@ -19,7 +19,10 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
       height: 100%;
       font-family: Arial, sans-serif;
       overflow-x: hidden;
@@ -107,22 +110,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.3s;
-      text-shadow: 1px 1px 3px black;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s;
     }
 
     #live {
-      background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80');
+      background-color: #FF5E5E; /* red tone */
     }
 
     #studio {
-      background-image: url('https://images.unsplash.com/photo-1586880244401-ea9f3b720f2b?auto=format&fit=crop&w=800&q=80');
+      background-color: #4C9AFF; /* blue tone */
     }
 
     #field {
-      background-image: url('https://images.unsplash.com/photo-1619983081563-3a8bff9fa53f?auto=format&fit=crop&w=800&q=80');
+      background-color: #00C781; /* green tone */
     }
 
     /* RESPONSIVE */
@@ -158,11 +160,11 @@
     <a href="#field">Field Recording</a>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT (SECTIONS WITH INTERNAL NAVIGATION) -->
   <main>
-    <section id="live">Live Recording</section>
-    <section id="studio">Studio Recording</section>
-    <section id="field">Field Recording</section>
+    <a href="#live" style="text-decoration: none;"><section id="live">Live Recording</section></a>
+    <a href="#studio" style="text-decoration: none;"><section id="studio">Studio Recording</section></a>
+    <a href="#field" style="text-decoration: none;"><section id="field">Field Recording</section></a>
   </main>
 
 </body>
