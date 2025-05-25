@@ -8,10 +8,97 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
     <title>Astro</title>
-  </head>
-  <body>
-    <h1>Combat Audio Website Test</h1>
-  </body>
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Code below for index structure from chat gpt-->
+  <title>Recording Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    .menu-icon {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 1.2rem;
+    }
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+    }
+    main {
+      margin-top: 70px; /* Adjust based on header height */
+    }
+    section {
+      height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+    }
+    #live {
+      background-color: #333;
+    }
+    #studio {
+      background-color: #555;
+    }
+    #field {
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Recording Services</div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="live">
+      Live Recording
+    </section>
+    <section id="studio">
+      Studio Recording
+    </section>
+    <section id="field">
+      Field Recording
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      alert('Menu toggled! You can implement dropdown or side nav here.');
+    }
+  </script>
+
+</body>
 </html>
 
 
