@@ -17,10 +17,9 @@ const title = "Live Recording";
         overflow: hidden;
       }
       header {
-        position: fixed;
+        position: sticky;
         top: 0;
-        left: 0;
-        right: 0;
+        z-index: 1000;
         height: 70px;
         background-color: #111;
         color: white;
@@ -28,7 +27,6 @@ const title = "Live Recording";
         justify-content: space-between;
         align-items: center;
         padding: 0 1.5rem;
-        z-index: 1000;
       }
       .logo {
         font-size: 1.2rem;
