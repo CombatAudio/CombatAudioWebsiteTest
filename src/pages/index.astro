@@ -9,149 +9,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} >
     <title>Home</title>
- <!-- <head> -->
-  <!-- <meta charset="UTF-8" /> -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 
   <!--Code below for index structure from chat gpt-->
    <title>Recording Services</title>
    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: Arial, sans-serif;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .page {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        height: 70px;
-        background-color: #111;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1.5rem;
-      }
-
-      .logo {
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-      }
-
-      .contact-button {
-        background-color: #00C781;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .contact-button:hover {
-        background-color: #00a86b;
-      }
-
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .page {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background-color: #111;
+      color: white;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 70px;
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+    }
+    .contact-button {
+      background-color: #00C781;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-button:hover {
+      background-color: #00a86b;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    section {
+      flex: 1 1 33%;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+    section a {
+      text-decoration: none;
+      color: white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #live { background-color: #FF5E5E; }
+    #studio { background-color: #4C9AFF; }
+    #field { background-color: #00C781; }
+    footer {
+      position: sticky;
+      bottom: 0;
+      z-index: 1000;
+      background-color: #111;
+      color: #aaa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    .footer-left {
+      flex: 1;
+    }
+    .footer-right {
+      flex-shrink: 0;
+    }
+    .footer-right a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 1.2rem;
+    }
+    .footer-right a:hover {
+      color: #fff;
+    }
+    @media (max-width: 768px) {
       main {
-        flex: 1;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
       }
-
       section {
-        flex: 1 1 33%;
-        min-height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        color: white;
-        text-shadow: 1px 1px 2px black;
+        min-height: 200px;
       }
-
-      section a {
-        text-decoration: none;
-        color: white;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #live { background-color: #FF5E5E; }
-      #studio { background-color: #4C9AFF; }
-      #field { background-color: #00C781; }
-
-      footer {
-        background-color: #111;
-        color: #aaa;
-        text-align: center;
-        padding: 1rem;
-        font-size: 0.9rem;
-      }
-
-      @media (max-width: 768px) {
-        main {
-          flex-direction: column;
-        }
-
-        section {
-          min-height: 200px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <header>
-        <a href="/" class="logo">Recording Services</a>
-        <a href="/contact" class="contact-button">Contact</a>
-      </header>
-
-      <main>
-        <section id="live"><a href="/live">Live Recording</a></section>
-        <section id="studio"><a href="/studio">Studio Recording</a></section>
-        <section id="field"><a href="/field">Field Recording</a></section>
-      </main>
-
-      <footer>
-        <p>© Combat Audio 2025</p>
-      </footer>
-    </div>
-  </body>
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a href="/" class="logo">Recording Services</a>
+      <a href="/contact" class="contact-button">Contact</a>
+    </header>
+    <main>
+      <section id="live"><a href="/live">Live Recording</a></section>
+      <section id="studio"><a href="/studio">Studio Recording</a></section>
+      <section id="field"><a href="/field">Field Recording</a></section>
+    </main>
+    <footer>
+      <div class="footer-left">© Combat Audio 2025</div>
+      <div class="footer-right">
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+          ▶ YouTube
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
 </html>
-
-  <!-- </body> -->
-<!-- </html> -->
-
-
-<!-- ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
-
-<Layout>
-	<Welcome />
-</Layout> -->
