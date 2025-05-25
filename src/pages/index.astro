@@ -8,26 +8,27 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
+    <title>Home</title>
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--Code below for index structure from chat gpt-->
    <title>Recording Services</title>
-   <title>Recording Services</title>
     <style>
-      html {
-        scroll-behavior: smooth;
-        height: 100%;
-      }
-
-      body {
+      html, body {
         margin: 0;
-        height: 100vh;
+        padding: 0;
+        height: 100%;
         font-family: Arial, sans-serif;
         overflow-x: hidden;
       }
 
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Header */
       header {
         position: fixed;
         top: 0;
@@ -41,7 +42,6 @@
         align-items: center;
         padding: 0 1.5rem;
         z-index: 1000;
-        overflow: hidden;
       }
 
       .logo {
@@ -49,6 +49,7 @@
         font-weight: bold;
       }
 
+      /* Hamburger */
       #menu-toggle {
         display: none;
       }
@@ -57,18 +58,19 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 1.2rem;
+        height: 20px;
         width: 25px;
         cursor: pointer;
       }
 
       .menu-icon span {
         display: block;
-        width: 100%;
         height: 3px;
         background-color: white;
+        border-radius: 2px;
       }
 
+      /* Nav Panel */
       .nav-panel {
         position: fixed;
         top: 70px;
@@ -82,7 +84,7 @@
         z-index: 999;
       }
 
-      #menu-toggle:checked ~ .nav-panel {
+      #menu-toggle:checked + header + .nav-panel {
         right: 0;
       }
 
@@ -93,10 +95,12 @@
         text-decoration: none;
       }
 
+      /* Main Layout */
       main {
         display: flex;
-        height: calc(100vh - 70px);
+        flex: 1;
         margin-top: 70px;
+        height: calc(100vh - 70px);
       }
 
       section {
@@ -106,7 +110,6 @@
         justify-content: center;
         font-size: 2rem;
         color: white;
-        text-align: center;
         text-shadow: 1px 1px 2px black;
         cursor: pointer;
       }
@@ -146,10 +149,10 @@
   </head>
   <body>
 
-    <!-- Hidden checkbox toggle -->
+    <!-- 1. Checkbox toggle -->
     <input type="checkbox" id="menu-toggle" />
 
-    <!-- Header -->
+    <!-- 2. Header (next element after checkbox) -->
     <header>
       <div class="logo">Recording Services</div>
       <label for="menu-toggle" class="menu-icon">
@@ -159,7 +162,7 @@
       </label>
     </header>
 
-    <!-- Slide-out nav -->
+    <!-- 3. Nav panel (must be next sibling of header) -->
     <div class="nav-panel">
       <a href="/">Home</a>
       <a href="/live">Live Recording</a>
@@ -167,7 +170,7 @@
       <a href="/field">Field Recording</a>
     </div>
 
-    <!-- Main page sections -->
+    <!-- 4. Page content -->
     <main>
       <section id="live"><a href="/live">Live Recording</a></section>
       <section id="studio"><a href="/studio">Studio Recording</a></section>
