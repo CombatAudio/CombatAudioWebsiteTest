@@ -12,32 +12,43 @@ const title = "Live Recording";
         padding: 0;
         height: 100%;
         font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         background-color: #FF5E5E;
         color: white;
-        overflow: hidden;
       }
+
       header {
         position: sticky;
         top: 0;
         z-index: 1000;
         height: 70px;
         background-color: #111;
-        color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 1.5rem;
       }
+
       .logo {
         font-size: 1.2rem;
         font-weight: bold;
         text-decoration: none;
         color: white;
       }
+
       .contact-button {
         background-color: #00C781;
         color: white;
-        border: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
         text-decoration: none;
@@ -45,47 +56,52 @@ const title = "Live Recording";
         cursor: pointer;
         transition: background-color 0.3s ease;
       }
+
       .contact-button:hover {
         background-color: #00a86b;
       }
+
       main {
-        margin-top: 70px;
-        height: calc(100vh - 70px);
+        flex: 1;
+        padding: 4rem 2rem;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
       }
-      a.back-link {
+
+      footer {
+        background-color: #111;
+        color: #aaa;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .back-link {
+        margin-top: 2rem;
         color: white;
         text-decoration: underline;
-        margin-top: 1rem;
-        display: block;
-      }
-      footer {
-      background-color: #111;
-      color: #aaa;
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 1rem;
-      position: relative;
-      margin-top: auto;
       }
     </style>
   </head>
   <body>
-    <header>
-  		<a href="/" class="logo">Recording Services</a>
-  		<a href="/contact" class="contact-button">Contact</a>
-	  </header>
-    <main>
-      <div style="text-align: center;">
-        <h1>Live Recording Page</h1>
+    <div class="page">
+      <header>
+        <a href="/" class="logo">Recording Services</a>
+        <a href="/contact" class="contact-button">Contact</a>
+      </header>
+
+      <main>
+        <h1>Live Recording</h1>
+        <p>This page describes live recording services and samples.</p>
         <a href="/" class="back-link">← Back to Home</a>
-      </div>
-    </main>
-    <!-- FOOTER -->
-  <footer>
-    <p>© Combat Audio 2025</p>
-  </footer>
+      </main>
+
+      <footer>
+        <p>© Combat Audio 2025</p>
+      </footer>
+    </div>
   </body>
 </html>

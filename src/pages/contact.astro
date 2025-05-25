@@ -6,15 +6,23 @@ const title = "Contact";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <style>
+<style>
       html, body {
         margin: 0;
         padding: 0;
         height: 100%;
         font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         background-color: #111;
         color: white;
-        overflow: hidden;
       }
       header {
         position: sticky;
@@ -22,7 +30,6 @@ const title = "Contact";
         z-index: 1000;
         height: 70px;
         background-color: #111;
-        color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -37,7 +44,6 @@ const title = "Contact";
       .contact-button {
         background-color: #00C781;
         color: white;
-        border: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
         text-decoration: none;
@@ -49,13 +55,13 @@ const title = "Contact";
         background-color: #00a86b;
       }
       main {
-        margin-top: 70px;
-        min-height: calc(100vh - 70px);
+        flex: 1;
+        padding: 4rem 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
+        text-align: center;
       }
       form {
         background-color: #222;
@@ -84,59 +90,43 @@ const title = "Contact";
       }
       label {
         font-weight: bold;
-        margin-bottom: 0.2rem;
-      }
-      .back-link {
-        margin-top: 2rem;
-        color: #ccc;
-        text-decoration: none;
       }
       footer {
-      background-color: #111;
-      color: #aaa;
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 1rem;
-      position: relative;
-      margin-top: auto;
+        background-color: #111;
+        color: #aaa;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
       }
-
     </style>
   </head>
   <body>
-    <header>
-  		<a href="/" class="logo">Recording Services</a>
-  		<a href="/contact" class="contact-button">Contact</a>
-	  </header>
+    <div class="page">
+      <header>
+        <a href="/" class="logo">Recording Services</a>
+        <a href="/contact" class="contact-button">Contact</a>
+      </header>
+      <main>
+        <h1>Contact</h1>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" required />
 
-    <main>
-      <h1>Contact</h1>
+          <label for="email">Your Email</label>
+          <input type="email" name="email" id="email" required />
 
-      <!-- ✅ FORM START -->
-      <form action="https://formspree.io/f/xdkgreoe" method="POST">
-  <input type="hidden" name="_redirect" value="/thanks" />
+          <label for="service">What kind of recording are you looking for?</label>
+          <input type="text" name="service" id="service" />
 
+          <label for="message">Tell me more</label>
+          <textarea name="message" id="message" rows="5" required></textarea>
 
-        <label for="email">Your Email</label>
-        <input type="email" name="email" id="email" required />
-
-        <label for="service">What kind of recording are you looking for?</label>
-        <input type="text" name="service" id="service" placeholder="Live, Studio, Field..." />
-
-        <label for="message">Tell me more</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
-
-        <input type="submit" value="Send Message" />
-      </form>
-      <!-- ✅ FORM END -->
-
-      <a href="/" class="back-link">← Back to Home</a>
-    </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© Combat Audio 2025</p>
-  </footer>
-
+          <input type="submit" value="Send Message" />
+        </form>
+      </main>
+      <footer>
+        <p>© Combat Audio 2025</p>
+      </footer>
+    </div>
   </body>
 </html>
