@@ -20,14 +20,11 @@
         padding: 0;
         height: 100%;
         font-family: Arial, sans-serif;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
       }
 
       header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
         height: 70px;
         background-color: #111;
         color: white;
@@ -35,6 +32,10 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 1.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         z-index: 1000;
       }
 
@@ -48,7 +49,6 @@
       .contact-button {
         background-color: #00C781;
         color: white;
-        border: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
         text-decoration: none;
@@ -62,13 +62,17 @@
       }
 
       main {
-        display: flex;
-        height: calc(100vh - 70px);
         margin-top: 70px;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-height: 0;
       }
 
       section {
-        flex: 1;
+        flex: 1 1 33%;
+        min-height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -76,6 +80,7 @@
         color: white;
         text-shadow: 1px 1px 2px black;
         cursor: pointer;
+        text-align: center;
       }
 
       section a {
@@ -100,44 +105,40 @@
         background-color: #00C781;
       }
 
+      footer {
+        background-color: #111;
+        color: #aaa;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+
       @media (max-width: 768px) {
         main {
           flex-direction: column;
         }
 
         section {
-          height: calc((100vh - 70px) / 3);
+          min-height: 200px;
         }
-      }
-      footer {
-      background-color: #111;
-      color: #aaa;
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 1rem;
-      position: relative;
-      margin-top: auto;
       }
     </style>
   </head>
   <body>
-
-    <!-- Header on every page -->
     <header>
-  		<a href="/" class="logo">Recording Services</a>
-  		<a href="/contact" class="contact-button">Contact</a>
-	</header>
+      <a href="/" class="logo">Recording Services</a>
+      <a href="/contact" class="contact-button">Contact</a>
+    </header>
 
-    <!-- Page content -->
     <main>
       <section id="live"><a href="/live">Live Recording</a></section>
       <section id="studio"><a href="/studio">Studio Recording</a></section>
       <section id="field"><a href="/field">Field Recording</a></section>
     </main>
-  <!-- FOOTER -->
-  <footer>
-    <p>© Combat Audio 2025</p>
-  </footer>
+
+    <footer>
+      <p>© Combat Audio 2025</p>
+    </footer>
   </body>
 </html>
 
