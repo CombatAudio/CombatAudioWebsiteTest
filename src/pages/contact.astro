@@ -16,11 +16,12 @@ const title = "Contact";
       body {
         display: flex;
         flex-direction: column;
+        min-height: 100vh;
       }
       .page {
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        flex: 1;
         background-color: #111;
         color: white;
       }
@@ -72,6 +73,7 @@ const title = "Contact";
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        margin-bottom: 0; /* ensure no extra space */
       }
       input, textarea {
         padding: 0.75rem;
@@ -97,7 +99,6 @@ const title = "Contact";
         text-align: center;
         padding: 1rem;
         font-size: 0.9rem;
-        margin-top: auto;
       }
     </style>
   </head>
