@@ -1,11 +1,11 @@
 ---
-const title = "Live Recording";
+const title = "SFX Packs";
 ---
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Field Recording</title>
+    <title>{title}</title>
     <style>
       html, body {
         margin: 0;
@@ -93,7 +93,30 @@ const title = "Live Recording";
         text-decoration: none;
         display: inline-block;
       }
-    </style>
+    .card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.card {
+  background-color: #444;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  background-color: #555;
+}
+</style>
   </head>
   <body>
     <div class="page">
@@ -102,8 +125,12 @@ const title = "Live Recording";
         <a href="/contact" class="contact-button">Contact</a>
       </header>
       <main>
-        <h1>SFX Packs</h1>
-        <p>This will be a template page for browsing and purchasing sound effect libraries.</p>
+  <h1>SFX Packs</h1>
+  <div class="card-list">
+    <div class="card">🎼 <strong>Urban Atmospheres Pack</strong><br>A curated set of traffic, crowds, city reverb, and industrial textures.</div>
+    <div class="card">🌌 <strong>Nature Elements Pack</strong><br>Waves, wind, birds, insects, forest ambiance, and rainfall captured in hi-res.</div>
+    <div class="card">🚀 <strong>Sci-Fi Toolkit</strong><br>Custom-designed spaceship, scanner, and forcefield effects for games and film.</div>
+  </div>
         <a href="/field" class="back-link">← Back to Field Recording</a>
       </main>
       <footer>
