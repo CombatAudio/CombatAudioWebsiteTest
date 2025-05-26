@@ -1,11 +1,11 @@
 ---
-const title = "Live Recording";
+const title = "Studio Recording";
 ---
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio Recording</title>
+    <title>{title}</title>
     <style>
       html, body {
         margin: 0;
@@ -22,7 +22,7 @@ const title = "Live Recording";
         display: flex;
         flex-direction: column;
         flex: 1;
-        background-color: #111;
+        background-color: #4C9AFF;
         color: white;
       }
       header {
@@ -57,42 +57,32 @@ const title = "Live Recording";
       }
       main {
         flex: 1;
-        padding: 2rem;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
         text-align: center;
       }
-      form {
-        background-color: #222;
-        padding: 2rem;
-        border-radius: 8px;
-        width: 100%;
-        max-width: 500px;
+      section {
+        flex: 1 1 50%;
+        min-height: 300px;
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 0;
-      }
-      input, textarea {
-        padding: 0.75rem;
-        border: none;
-        border-radius: 4px;
-        font-size: 1rem;
-      }
-      input[type="submit"] {
-        background-color: #00C781;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
         color: white;
-        font-weight: bold;
-        cursor: pointer;
+        text-shadow: 1px 1px 2px black;
       }
-      input[type="submit"]:hover {
-        background-color: #00a86b;
+      section a {
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      label {
-        font-weight: bold;
-      }
+      #ambisonics { background-color: #3F51B5; }
+      #binaural { background-color: #009688; }
       footer {
         position: sticky;
         bottom: 0;
@@ -120,6 +110,14 @@ const title = "Live Recording";
       .footer-right a:hover {
         color: #fff;
       }
+      @media (max-width: 768px) {
+        main {
+          flex-direction: column;
+        }
+        section {
+          min-height: 200px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -129,9 +127,8 @@ const title = "Live Recording";
         <a href="/contact" class="contact-button">Contact</a>
       </header>
       <main>
-        <h1>Ambisonics and Binaural</h1>
-        <p>This page describes studio recording services and setup.</p>
-        <a href="/" class="back-link">← Back to Home</a>  
+        <section id="ambisonics"><a href="/ambisonics">Ambisonics</a></section>
+        <section id="binaural"><a href="/binaural">Binaural</a></section>
       </main>
       <footer>
         <div class="footer-left">© Combat Audio 2025</div>
@@ -144,5 +141,3 @@ const title = "Live Recording";
     </div>
   </body>
 </html>
-
-
