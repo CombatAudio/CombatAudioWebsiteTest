@@ -1,0 +1,130 @@
+---
+const title = "Field Recordings and Travel";
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .page {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background-color: #333;
+        color: white;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        height: 70px;
+        background-color: #111;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+      }
+      .logo {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
+      .contact-button {
+        background-color: #00C781;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .contact-button:hover {
+        background-color: #00a86b;
+      }
+      main {
+        flex: 1;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin: 1.5rem 0;
+      }
+      footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 1000;
+        background-color: #111;
+        color: #aaa;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+      }
+      .footer-left {
+        flex: 1;
+      }
+      .footer-right {
+        flex-shrink: 0;
+      }
+      .footer-right a {
+        color: #aaa;
+        text-decoration: none;
+        margin-left: 1rem;
+        font-size: 1.2rem;
+      }
+      .footer-right a:hover {
+        color: #fff;
+      }
+      .back-link {
+        margin-top: 2rem;
+        color: #ccc;
+        text-decoration: none;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a href="/" class="logo">Recording Services</a>
+        <a href="/contact" class="contact-button">Contact</a>
+      </header>
+      <main>
+        <h1>Field Recordings and Travel</h1>
+        <ul>
+          <li><strong>Japan – Forests and Shrines:</strong> Captured ambient nature recordings, temple bells, and bustling street scenes from Tokyo.</li>
+          <li><strong>Scotland – Highlands and Lochs:</strong> Wind and water textures from remote glens and field interviews with local musicians.</li>
+          <li><strong>Iceland – Volcanic Landscapes:</strong> Lava fields, geysers, glaciers, and eerie nighttime atmospheres.</li>
+        </ul>
+        <a href="/field" class="back-link">← Back to Field Recording</a>
+      </main>
+      <footer>
+        <div class="footer-left">© Combat Audio 2025</div>
+        <div class="footer-right">
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+            ▶ YouTube
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
