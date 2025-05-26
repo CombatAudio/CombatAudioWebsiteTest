@@ -1,5 +1,5 @@
 ---
-const title = "Home";
+const title = "Live";
 ---
 <html lang="en">
   <head>
@@ -125,9 +125,16 @@ const title = "Home";
   <body>
     <div class="page">
       <header>
-        <a href="/" class="logo">Recording Services</a>
-        <a href="/contact" class="contact-button">Contact</a>
-      </header>
+  <div style="flex: 1; display: flex; justify-content: flex-start;">
+    <a href="/" class="logo">Recording Services</a>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <a href="/resources" aria-label="Resources" style="color: white; text-decoration: none; font-weight: bold; font-size: 1rem;">📚 Resources</a>
+  </div>
+  <div style="flex: 1; display: flex; justify-content: flex-end;">
+    <a href="/contact" class="contact-button">Contact</a>
+  </div>
+</header>
       <main>
         <h1>Live Production and Broadcast</h1>
         <p>This page describes live recording services and samples.</p>
@@ -138,14 +145,9 @@ const title = "Home";
     <a href="/" aria-label="Home" style="color: #aaa; text-decoration: none; font-size: 1.2rem; margin-right: 1rem;">🏠</a>
     © Combat Audio 2025
   </div>
-  <div class="footer-right">
-    <a href="/resources" aria-label="Resources" style="color: #aaa; text-decoration: none; font-size: 1.2rem;">
-      📚 Resources
-    </a>
-  </div>
+  
 </footer>
 
     </div>
   </body>
 </html>
-
