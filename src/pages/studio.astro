@@ -8,24 +8,54 @@ const title = "Studio";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Studio</title>
     <style>
-      body {
+      html, body {
         margin: 0;
+        padding: 0;
         font-family: Arial, sans-serif;
         overflow-x: hidden;
+        height: 100%;
       }
-      header, footer {
-        position: sticky;
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         background-color: #111;
         color: white;
-        padding: 1rem;
-        text-align: center;
-        z-index: 1000;
+      }
+      .page {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
       }
       header {
+        position: sticky;
         top: 0;
+        z-index: 1000;
+        background-color: #111;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+        height: 70px;
       }
-      footer {
-        bottom: 0;
+      .logo {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
+      .contact-button {
+        background-color: #00C781;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .contact-button:hover {
+        background-color: #00a86b;
       }
       main {
         padding: 0;
@@ -47,38 +77,78 @@ const title = "Studio";
         background: #444;
         clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
       }
+      footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 1000;
+        background-color: #111;
+        color: #aaa;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+      }
+      .footer-left {
+        flex: 1;
+      }
+      .footer-right {
+        flex-shrink: 0;
+      }
+      .footer-right a {
+        color: #aaa;
+        text-decoration: none;
+        margin-left: 1rem;
+        font-size: 1.2rem;
+      }
+      .footer-right a:hover {
+        color: #fff;
+      }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Studio</h1>
-    </header>
+    <div class="page">
+      <header>
+        <div style="flex: 1; display: flex; justify-content: flex-start;">
+          <a href="/" class="logo">Services</a>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <a href="/resources" aria-label="Resources" style="color: white; text-decoration: none; font-weight: bold; font-size: 1rem;">📚 Resources</a>
+        </div>
+        <div style="flex: 1; display: flex; justify-content: flex-end;">
+          <a href="/contact" class="contact-button">Contact</a>
+        </div>
+      </header>
 
-    <main>
-      <section class="section1">
-        <h2>Video Post Production</h2>
-        <p>
-          Full-service video post-production: syncing, dialogue cleanup, sound design, music placement, and final mastering for film, documentaries, and digital media.
-        </p>
-      </section>
+      <main>
+        <section class="section1">
+          <h2>Video Post Production</h2>
+          <p>
+            Full-service video post-production: syncing, dialogue cleanup, sound design, music placement, and final mastering for film, documentaries, and digital media.
+          </p>
+        </section>
 
-      <section class="section2">
-        <h2>Audio Post Production</h2>
-        <p>
-          Professional dialogue editing, ADR, Foley, and mixing to industry standards across stereo, surround, and immersive formats.
-        </p>
-      </section>
+        <section class="section2">
+          <h2>Audio Post Production</h2>
+          <p>
+            Professional dialogue editing, ADR, Foley, and mixing to industry standards across stereo, surround, and immersive formats.
+          </p>
+        </section>
 
-      <section class="section3">
-        <h2>Binaural/Ambisonic Sound Design</h2>
-        <p>
-          Spatial sound creation using Ambisonic and binaural techniques for virtual reality, games, installations, and experimental media.
-        </p>
-      </section>
-    </main>
+        <section class="section3">
+          <h2>Binaural/Ambisonic Sound Design</h2>
+          <p>
+            Spatial sound creation using Ambisonic and binaural techniques for virtual reality, games, installations, and experimental media.
+          </p>
+        </section>
+      </main>
 
-    <footer>
-      <p>&copy; 2025 Gregory Levinson. All rights reserved.</p>
-    </footer>
+      <footer>
+        <div class="footer-left">
+          <a href="/" aria-label="Home" style="color: #aaa; text-decoration: none; font-size: 1.2rem; margin-right: 1rem;">🏠</a>
+          © Combat Audio 2025
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
