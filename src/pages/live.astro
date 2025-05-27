@@ -183,29 +183,54 @@ section:hover {
 <main style="flex-direction: column; padding: 2rem;">
   <section style="margin-bottom: 3rem;">
     <h2 style="text-align: center; margin-bottom: 1rem;">Aurora Ensemble</h2>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" allowfullscreen></iframe>
+    <div class="video-panel">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
   <section style="margin-bottom: 3rem;">
     <h2 style="text-align: center; margin-bottom: 1rem;">Orion Ensemble</h2>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID4" frameborder="0" allowfullscreen></iframe>
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID5" frameborder="0" allowfullscreen></iframe>
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID6" frameborder="0" allowfullscreen></iframe>
+    <div class="video-panel">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID4" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID5" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID6" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
   <section>
     <h2 style="text-align: center; margin-bottom: 1rem;">Bienen Live Stream 2025</h2>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID7" frameborder="0" allowfullscreen></iframe>
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID8" frameborder="0" allowfullscreen></iframe>
-      <iframe width="300" height="170" src="https://www.youtube.com/embed/VIDEO_ID9" frameborder="0" allowfullscreen></iframe>
+    <div class="video-panel">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID7" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID8" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID9" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 </main>
+<style>
+  .video-panel {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #222;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  }
+  .video-panel iframe {
+    width: 320px;
+    height: 180px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #000;
+  }
+  @media (max-width: 768px) {
+    .video-panel iframe {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+</style>
     <footer>
   <div class="footer-left">
     <a href="/" aria-label="Home" style="color: #aaa; text-decoration: none; font-size: 1.2rem; margin-right: 1rem;">🏠</a>
