@@ -63,15 +63,18 @@ const title = "Studio";
       section {
         color: white;
         padding: 4rem 2rem;
-        clip-path: polygon(0 0, 100% 100%, 0 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 50vh;
       }
       .section1 {
         background: #222;
-        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        clip-path: polygon(0 0, 100% 0, 0 100%);
       }
       .section2 {
         background: #333;
-        clip-path: polygon(0 100%, 100% 0, 100% 100%);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
       }
       footer {
         background-color: #111;
