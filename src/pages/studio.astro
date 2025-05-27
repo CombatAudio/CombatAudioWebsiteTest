@@ -67,21 +67,16 @@ const title = "Studio";
         position: absolute;
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
       }
       .section1 {
         background: #222;
-        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 51%, 0 100%);
         z-index: 1;
+        border-bottom: 2px solid #000;
       }
       .section2 {
         background: #333;
-        clip-path: polygon(0 100%, 100% 50%, 100% 100%, 0 100%);
+        clip-path: polygon(0 100%, 100% 49%, 100% 100%, 0 100%);
         z-index: 2;
       }
       footer {
@@ -126,19 +121,8 @@ const title = "Studio";
       </header>
 
       <main>
-        <section class="section1">
-          <h2>Post Production</h2>
-          <p>
-            Full-service post-production for video and audio: syncing, dialogue cleanup, sound design, Foley, mixing, and mastering for film, games, and interactive media.
-          </p>
-        </section>
-
-        <section class="section2">
-          <h2>Sound Design</h2>
-          <p>
-            Custom sound effects, spatial audio with Ambisonic and binaural techniques, and immersive sonic storytelling for games, installations, and film.
-          </p>
-        </section>
+        <section class="section1"></section>
+        <section class="section2"></section>
       </main>
 
       <footer>
