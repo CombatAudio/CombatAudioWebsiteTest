@@ -23,9 +23,9 @@ const title = "Studio";
         color: white;
       }
       .page {
-        flex: 1;
         display: flex;
         flex-direction: column;
+        min-height: 100vh;
       }
       header {
         position: sticky;
@@ -58,7 +58,7 @@ const title = "Studio";
         background-color: #00a86b;
       }
       main {
-        padding: 0;
+        flex: 1;
       }
       section {
         color: white;
@@ -78,9 +78,6 @@ const title = "Studio";
         clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
       }
       footer {
-        position: sticky;
-        bottom: 0;
-        z-index: 1000;
         background-color: #111;
         color: #aaa;
         display: flex;
@@ -88,6 +85,7 @@ const title = "Studio";
         align-items: center;
         padding: 1rem 1.5rem;
         font-size: 0.9rem;
+        margin-top: auto;
       }
       .footer-left {
         flex: 1;
@@ -110,7 +108,7 @@ const title = "Studio";
     <div class="page">
       <header>
         <div style="flex: 1; display: flex; justify-content: flex-start;">
-          <a href="/" class="logo">Services</a>
+          <a href="/" class="logo">combat.audio</a>
         </div>
         <div style="flex: 1; text-align: center;">
           <a href="/resources" aria-label="Resources" style="color: white; text-decoration: none; font-weight: bold; font-size: 1rem;">📚 Resources</a>
