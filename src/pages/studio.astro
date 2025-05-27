@@ -7,6 +7,47 @@ const title = "Studio";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Studio</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+      }
+      header, footer {
+        position: sticky;
+        background-color: #111;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        z-index: 1000;
+      }
+      header {
+        top: 0;
+      }
+      footer {
+        bottom: 0;
+      }
+      main {
+        padding: 0;
+      }
+      section {
+        color: white;
+        padding: 4rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      .section1 {
+        background: #222;
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+      }
+      .section2 {
+        background: #333;
+        clip-path: polygon(0 0, 100% 30%, 100% 70%, 0 100%);
+      }
+      .section3 {
+        background: #444;
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -14,40 +55,30 @@ const title = "Studio";
     </header>
 
     <main>
-      <section>
-        <h2>Post-Production & Sound Design</h2>
+      <section class="section1">
+        <h2>Video Post Production</h2>
         <p>
-          From multitrack mixing and mastering to detailed sound editing, our studio specializes in high-quality post-production services for film, games, and other media.
+          Full-service video post-production: syncing, dialogue cleanup, sound design, music placement, and final mastering for film, documentaries, and digital media.
         </p>
       </section>
 
-      <section>
-        <h2>Dialogue Editing</h2>
+      <section class="section2">
+        <h2>Audio Post Production</h2>
         <p>
-          We clean, align, and enhance dialogue recordings to meet industry standards for clarity and timing.
+          Professional dialogue editing, ADR, Foley, and mixing to industry standards across stereo, surround, and immersive formats.
         </p>
       </section>
 
-      <section>
-        <h2>Foley & SFX</h2>
+      <section class="section3">
+        <h2>Binaural/Ambisonic Sound Design</h2>
         <p>
-          Custom foley and sound effects crafted for immersive experiences, recorded in-house or captured in the field.
-        </p>
-      </section>
-
-      <section>
-        <h2>Game Audio Implementation</h2>
-        <p>
-          Integration-ready audio assets and adaptive sound systems using middleware like FMOD and Wwise.
-        </p>
-      </section>
-
-      <section>
-        <h2>Music Editing & Mix</h2>
-        <p>
-          Seamless editing, mixing, and mastering of music cues to support visual storytelling and gameplay rhythm.
+          Spatial sound creation using Ambisonic and binaural techniques for virtual reality, games, installations, and experimental media.
         </p>
       </section>
     </main>
+
+    <footer>
+      <p>&copy; 2025 Gregory Levinson. All rights reserved.</p>
+    </footer>
   </body>
 </html>
