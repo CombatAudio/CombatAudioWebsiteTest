@@ -77,76 +77,65 @@ const title = "SFX Packs";
       .footer-left {
         flex: 1;
       }
-      .footer-right {
-        flex-shrink: 0;
-      }
-      .footer-right a {
-        color: #aaa;
-        text-decoration: none;
-        margin-left: 1rem;
-        font-size: 1.2rem;
-      }
-      .footer-right a:hover {
-        color: #fff;
-      }
       .back-link {
         margin-top: 2rem;
         color: #ccc;
         text-decoration: none;
         display: inline-block;
       }
-    .card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.card {
-  background-color: #444;
-  padding: 1.5rem;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  font-size: 1rem;
-  line-height: 1.6;
-  transition: transform 0.2s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  background-color: #555;
-}
-</style>
+      .card-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+      .card {
+        background-color: #444;
+        padding: 1.5rem;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        font-size: 1rem;
+        line-height: 1.6;
+        transition: transform 0.2s ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        background-color: #555;
+      }
+    </style>
   </head>
   <body>
     <div class="page">
       <header>
-        <a href="/" class="logo">combat.audio</a>
-        <a href="/contact" class="contact-button">Contact</a>
+        <div style="flex: 1; display: flex; justify-content: flex-start;">
+          <a href="/" class="logo">combat.audio</a>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <a href="/resources" aria-label="Resources" style="color: white; text-decoration: none; font-weight: bold; font-size: 1rem;">📚 Resources</a>
+        </div>
+        <div style="flex: 1; display: flex; justify-content: flex-end;">
+          <a href="/contact" class="contact-button">Contact</a>
+        </div>
       </header>
       <main>
-  <h1>SFX Packs</h1>
-  <div class="card-list">
-    <div class="card">🎼 <strong>Urban Atmospheres Pack</strong><br>A curated set of traffic, crowds, city reverb, and industrial textures.<br><audio controls src="/audio/urban.mp3"></audio><br><a href="/audio/urban.mp3" download>Download</a></div>
-    <div class="card">🌌 <strong>Nature Elements Pack</strong><br>Waves, wind, birds, insects, forest ambiance, and rainfall captured in hi-res.<br><audio controls src="/audio/nature.mp3"></audio><br><a href="/audio/nature.mp3" download>Download</a></div>
-    <div class="card">🚀 <strong>Sci-Fi Toolkit</strong><br>Custom-designed spaceship, scanner, and forcefield effects for games and film.<br><audio controls src="/audio/scifi.mp3"></audio><br><a href="/audio/scifi.mp3" download>Download</a></div>
-  </div>
-  <a href="/field" class="back-link">← Back to Field Recording</a>
+        <h1>SFX Packs</h1>
+        <div class="card-list">
+          <div class="card">🎼 <strong>Urban Atmospheres Pack</strong><br>A curated set of traffic, crowds, city reverb, and industrial textures.<br><audio controls src="/audio/urban.mp3"></audio><br><a href="/audio/urban.mp3" download>Download</a></div>
+          <div class="card">🌌 <strong>Nature Elements Pack</strong><br>Waves, wind, birds, insects, forest ambiance, and rainfall captured in hi-res.<br><audio controls src="/audio/nature.mp3"></audio><br><a href="/audio/nature.mp3" download>Download</a></div>
+          <div class="card">🚀 <strong>Sci-Fi Toolkit</strong><br>Custom-designed spaceship, scanner, and forcefield effects for games and film.<br><audio controls src="/audio/scifi.mp3"></audio><br><a href="/audio/scifi.mp3" download>Download</a></div>
+        </div>
+        <a href="/field" class="back-link">← Back to Field Recording</a>
       </main>
       <footer>
-  <div class="footer-left">
-    <a href="/" aria-label="Home" style="color: #aaa; text-decoration: none; font-size: 1.2rem; margin-right: 1rem;">🏠</a>
-    © Combat Audio 2025
-  </div>
-  <div class="footer-right">
-    <a href="/resources" aria-label="Resources" style="color: #aaa; text-decoration: none; font-size: 1.2rem;">
-      📚 Resources
-    </a>
-  </div>
-</footer>
-
+        <div class="footer-left">
+          <a href="/" aria-label="Home" style="color: #aaa; text-decoration: none; font-size: 1.2rem; margin-right: 1rem;">🏠</a>
+          © Combat Audio 2025
+        </div>
+      </footer>
     </div>
   </body>
 </html>
