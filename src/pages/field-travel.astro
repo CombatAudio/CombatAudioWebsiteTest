@@ -1,5 +1,5 @@
 ---
-const title = "Field Recordings and Travel";
+const title = "Field Travel";
 ---
 <html lang="en">
   <head>
@@ -7,25 +7,20 @@ const title = "Field Recordings and Travel";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} >
-    <title>field-travel</title>
+    <title>Field Travel</title>
     <style>
       html, body {
         margin: 0;
         padding: 0;
         height: 100%;
         font-family: Arial, sans-serif;
+        background-color: #111;
+        color: white;
       }
       body {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-      }
-      .page {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        background-color: #333;
-        color: white;
       }
       header {
         position: sticky;
@@ -62,12 +57,28 @@ const title = "Field Recordings and Travel";
         padding: 4rem 2rem;
         text-align: center;
       }
-      ul {
-        list-style-type: none;
-        padding: 0;
+      .card-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
       }
-      li {
-        margin: 1.5rem 0;
+      .card {
+        background-color: #444;
+        padding: 1.5rem;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        font-size: 1rem;
+        line-height: 1.6;
+        transition: transform 0.2s ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        background-color: #555;
       }
       footer {
         position: sticky;
@@ -84,56 +95,47 @@ const title = "Field Recordings and Travel";
       .footer-left {
         flex: 1;
       }
-      .footer-right {
-        flex-shrink: 0;
-      }
-      .footer-right a {
-        color: #aaa;
-        text-decoration: none;
-        margin-left: 1rem;
-        font-size: 1.2rem;
-      }
-      .footer-right a:hover {
-        color: #fff;
-      }
-      .back-link {
-        margin-top: 2rem;
-        color: #ccc;
-        text-decoration: none;
-        display: inline-block;
-      }
     </style>
   </head>
   <body>
     <div class="page">
       <header>
-  <div style="flex: 1; display: flex; justify-content: flex-start;">
-    <a href="/" class="logo">combat.audio</a>
-  </div>
-  <div style="flex: 1; text-align: center;">
-    <a href="/resources" aria-label="Resources" style="color: white; text-decoration: none; font-weight: bold; font-size: 1rem;">📚 Resources</a>
-  </div>
-  <div style="flex: 1; display: flex; justify-content: flex-end;">
-    <a href="/contact" class="contact-button">Contact</a>
-  </div>
-</header>
+        <div style="flex: 1; display: flex; justify-content: flex-start;">
+          <a href="/" class="logo">combat.audio</a>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <a href="/resources" aria-label="Resources" style="color: white; text-decoration: none; font-weight: bold; font-size: 1rem;">📚 Resources</a>
+        </div>
+        <div style="flex: 1; display: flex; justify-content: flex-end;">
+          <a href="/contact" class="contact-button">Contact</a>
+        </div>
+      </header>
       <main>
         <h1>Field Recordings and Travel</h1>
-        <ul>
-          <li><strong>Japan – Forests and Shrines:</strong>$1<br><audio controls src="/audio/japan.mp3"></audio><br><a href="/audio/japan.mp3" download>Download</a></li>
-          <li><strong>Scotland – Highlands and Lochs:</strong>$1<br><audio controls src="/audio/scotland.mp3"></audio><br><a href="/audio/scotland.mp3" download>Download</a></li>
-          <li><strong>Iceland – Volcanic Landscapes:</strong>$1<br><audio controls src="/audio/iceland.mp3"></audio><br><a href="/audio/iceland.mp3" download>Download</a></li>
-        </ul>
-        <a href="/field" class="back-link">← Back to Field Recording</a>
+        <div class="card-list">
+          <div class="card">
+            🎒 <strong>Mountain Windscape</strong><br>
+            High-altitude gusts and rocky ambience.<br>
+            <audio controls src="/audio/mountain.mp3"></audio>
+          </div>
+          <div class="card">
+            🌿 <strong>Jungle Morning</strong><br>
+            Dense foliage, insects, birdsong, and distant waterfalls.<br>
+            <audio controls src="/audio/jungle.mp3"></audio>
+          </div>
+          <div class="card">
+            🏙️ <strong>Urban Sunrise</strong><br>
+            Distant traffic, morning footsteps, and city bustle.<br>
+            <audio controls src="/audio/urbanmorning.mp3"></audio>
+          </div>
+        </div>
       </main>
       <footer>
-  <div class="footer-left">
-    <a href="/" aria-label="Home" style="color: #aaa; text-decoration: none; font-size: 1.2rem; margin-right: 1rem;">🏠</a>
-    © Combat Audio 2025
-  </div>
-  
-</footer>
-
+        <div class="footer-left">
+          <a href="/" aria-label="Home" style="color: #aaa; text-decoration: none; font-size: 1.2rem; margin-right: 1rem;">🏠</a>
+          © Combat Audio 2025
+        </div>
+      </footer>
     </div>
   </body>
 </html>
