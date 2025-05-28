@@ -127,9 +127,16 @@ const title = "Contact";
   <body>
     <div class="page">
       <header>
-        <a href="/" class="logo">combat.audio</a>
-        <a href="/contact" class="contact-button">Contact</a>
-      </header>
+  <div style="flex: 1; display: flex; justify-content: flex-start;">
+    <a href="/" class="logo">combat.audio</a>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <a href="/resources" aria-label="Resources" style="color: white; text-decoration: none; font-weight: bold; font-size: 1rem;">📚 Resources</a>
+  </div>
+  <div style="flex: 1; display: flex; justify-content: flex-end;">
+    <a href="/contact" class="contact-button">Contact</a>
+  </div>
+</header>
       <main>
         <h1>Contact</h1>
         <form action="https://formspree.io/f/xnndenyw" method="POST">
