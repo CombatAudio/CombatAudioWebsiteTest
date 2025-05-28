@@ -7,7 +7,7 @@ const title = "SFX Packs";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} >
-    <title>sfx</title>
+    <title>SFX Packs</title>
     <style>
       html, body {
         margin: 0;
@@ -24,7 +24,7 @@ const title = "SFX Packs";
         display: flex;
         flex-direction: column;
         flex: 1;
-        background-color: #222;
+        background-color: #111;
         color: white;
       }
       header {
@@ -59,8 +59,48 @@ const title = "SFX Packs";
       }
       main {
         flex: 1;
-        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
         text-align: center;
+      }
+      .video-section h3 {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #ccc;
+        margin: 2rem 0 1rem;
+      }
+      .video-panel {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+        background-color: #222;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(255,255,255,0.05);
+      }
+      .video-panel a {
+        display: block;
+        width: 320px;
+        height: 180px;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        border: 2px solid #333;
+        background-color: #333;
+        font-size: 1rem;
+        line-height: 1.4;
+        color: white;
+        text-decoration: none;
+        padding: 1rem;
+        text-align: center;
+      }
+      .video-panel a:hover {
+        transform: scale(1.05);
+        border-color: #00C781;
+        background-color: #444;
       }
       footer {
         position: sticky;
@@ -76,35 +116,6 @@ const title = "SFX Packs";
       }
       .footer-left {
         flex: 1;
-      }
-      .back-link {
-        margin-top: 2rem;
-        color: #ccc;
-        text-decoration: none;
-        display: inline-block;
-      }
-      .card-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2rem;
-      }
-      .card {
-        background-color: #444;
-        padding: 1.5rem;
-        border-radius: 10px;
-        max-width: 600px;
-        width: 100%;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        font-size: 1rem;
-        line-height: 1.6;
-        transition: transform 0.2s ease;
-      }
-      .card:hover {
-        transform: translateY(-4px);
-        background-color: #555;
       }
     </style>
   </head>
@@ -122,13 +133,14 @@ const title = "SFX Packs";
         </div>
       </header>
       <main>
-        <h1>SFX Packs</h1>
-        <div class="card-list">
-          <div class="card">🎼 <strong>Urban Atmospheres Pack</strong><br>A curated set of traffic, crowds, city reverb, and industrial textures.<br><audio controls src="/audio/urban.mp3"></audio><br><a href="/audio/urban.mp3" download>Download</a></div>
-          <div class="card">🌌 <strong>Nature Elements Pack</strong><br>Waves, wind, birds, insects, forest ambiance, and rainfall captured in hi-res.<br><audio controls src="/audio/nature.mp3"></audio><br><a href="/audio/nature.mp3" download>Download</a></div>
-          <div class="card">🚀 <strong>Sci-Fi Toolkit</strong><br>Custom-designed spaceship, scanner, and forcefield effects for games and film.<br><audio controls src="/audio/scifi.mp3"></audio><br><a href="/audio/scifi.mp3" download>Download</a></div>
+        <div class="video-section">
+          <h3>SFX Packs</h3>
+          <div class="video-panel">
+            <a href="/audio/urban.mp3" download>🎼 <br><strong>Urban Atmospheres Pack</strong></a>
+            <a href="/audio/nature.mp3" download>🌌 <br><strong>Nature Elements Pack</strong></a>
+            <a href="/audio/scifi.mp3" download>🚀 <br><strong>Sci-Fi Toolkit</strong></a>
+          </div>
         </div>
-        <a href="/field" class="back-link">← Back to Field Recording</a>
       </main>
       <footer>
         <div class="footer-left">
