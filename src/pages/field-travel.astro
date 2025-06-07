@@ -113,24 +113,24 @@ const title = "Field Travel";
       <main>
         <h1>Binaural Field Recordings</h1>
         <div class="card-list">
-  <div class="video-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
-    <a href="#" data-audio="audio1">
-      <img src="/images/icon-crow.png" alt="Crow Icon" style="width: 100%; border-radius: 8px;">
-    </a>
-    <a href="#" data-audio="audio2">
-      <img src="/images/icon-stream.png" alt="Stream Icon" style="width: 100%; border-radius: 8px;">
-    </a>
-    <a href="#" data-audio="audio3">
-      <img src="/images/icon-ridge.png" alt="Ridge Icon" style="width: 100%; border-radius: 8px;">
-    </a>
-    <a href="#" data-audio="audio4">
-      <img src="/images/icon-acunit.png" alt="AC Unit Icon" style="width: 100%; border-radius: 8px;">
-    </a>
+  <div class="video-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; position: relative;">
+    <a href="#" data-audio="audio1" style="position: relative; display: block;">
+  <img src="/images/icon-crow.png" alt="Crow Icon" style="width: 100%; border-radius: 8px;">
+</a>
+    <a href="#" data-audio="audio2" style="position: relative; display: block;">
+  <img src="/images/icon-stream.png" alt="Stream Icon" style="width: 100%; border-radius: 8px;">
+</a>
+    <a href="#" data-audio="audio3" style="position: relative; display: block;">
+  <img src="/images/icon-ridge.png" alt="Ridge Icon" style="width: 100%; border-radius: 8px;">
+</a>
+    <a href="#" data-audio="audio4" style="position: relative; display: block;">
+  <img src="/images/icon-acunit.png" alt="AC Unit Icon" style="width: 100%; border-radius: 8px;">
+</a>
   </div>
-  <audio id="audio1" loop src="/audio/FrontCrow_Binaural.mp3"></audio>
-  <audio id="audio2" loop src="/audio/StreamCarFront_Binaural.mp3"></audio>
+  <audio id="audio1" loop src="/audio/ACmovingChirp_Binaural.mp3"></audio>
+  <audio id="audio2" loop src="/audio/FrontCrow_Binaural.mp3"></audio>
   <audio id="audio3" loop src="/audio/OverlookCarRear_Binaural.mp3"></audio>
-  <audio id="audio4" loop src="/audio/ACmovingChirp_Binaural.mp3"></audio>
+  <audio id="audio4" loop src="/audio/StreamCarFront_Binaural.mp3"></audio>
 </div>
 <script>
   document.querySelectorAll('.video-panel a').forEach(link => {
@@ -158,10 +158,24 @@ const title = "Field Travel";
   });
 </script>
 <style>
-  .video-panel a.active img {
-    outline: 3px solid #00C781;
-    box-shadow: 0 0 10px #00C781;
-  }
+  $1
+.video-panel a::after {
+  content: '▶';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.video-panel a.active::after {
+  content: '⏸';
+  opacity: 1;
+}
 </style>
           <!-- $1 -->
           <!-- $1 -->
