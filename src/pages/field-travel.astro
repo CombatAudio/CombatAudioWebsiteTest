@@ -165,11 +165,23 @@ const title = "Field Travel";
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
+}
+
+.video-panel a.active::after {
+  content: '⏸';
+  opacity: 1;
 }
 
 .video-panel a.active::after {
