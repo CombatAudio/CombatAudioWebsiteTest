@@ -113,11 +113,56 @@ const title = "Field Travel";
       <main>
         <h1>Binaural Field Recordings</h1>
         <div class="card-list">
-<audio controls loop src="/audio/ACmovingChirp_Binaural.mp3"></audio><br>
-<audio controls loop src="/audio/FrontCrow_Binaural.mp3"></audio><br>
-<audio controls loop src="/audio/OverlookCarRear_Binaural.mp3"></audio><br>
-<audio controls loop src="/audio/StreamCarFront_Binaural.mp3"></audio>
-          </div>
+  <div class="video-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+    <a href="#" data-audio="audio1">
+      <img src="/images/icon-bird1.svg" alt="Bird Icon 1" style="width: 100%; border-radius: 8px;">
+    </a>
+    <a href="#" data-audio="audio2">
+      <img src="/images/icon-bird2.svg" alt="Bird Icon 2" style="width: 100%; border-radius: 8px;">
+    </a>
+    <a href="#" data-audio="audio3">
+      <img src="/images/icon-bird3.svg" alt="Bird Icon 3" style="width: 100%; border-radius: 8px;">
+    </a>
+    <a href="#" data-audio="audio4">
+      <img src="/images/icon-bird4.svg" alt="Bird Icon 4" style="width: 100%; border-radius: 8px;">
+    </a>
+  </div>
+  <audio id="audio1" loop src="/audio/ACmovingChirp_Binaural.mp3"></audio>
+  <audio id="audio2" loop src="/audio/FrontCrow_Binaural.mp3"></audio>
+  <audio id="audio3" loop src="/audio/OverlookCarRear_Binaural.mp3"></audio>
+  <audio id="audio4" loop src="/audio/StreamCarFront_Binaural.mp3"></audio>
+</div>
+<script>
+  document.querySelectorAll('.video-panel a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.dataset.audio;
+      const audio = document.getElementById(targetId) as HTMLAudioElement;
+
+      // Pause all others
+      document.querySelectorAll('audio').forEach(a => {
+        if (a !== audio) a.pause();
+      });
+
+      // Toggle play
+      if (audio.paused) {
+        audio.play();
+        document.querySelectorAll('.video-panel a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+      } else {
+        audio.pause();
+        this.classList.remove('active');
+      }
+    });
+  });
+</script>
+<style>
+  .video-panel a.active img {
+    outline: 3px solid #00C781;
+    box-shadow: 0 0 10px #00C781;
+  }
+</style>
           <!-- $1 -->
           <!-- $1 -->
         </div>
