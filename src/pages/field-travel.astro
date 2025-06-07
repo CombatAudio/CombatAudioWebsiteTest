@@ -95,7 +95,23 @@ const title = "Field Travel";
       .footer-left {
         flex: 1;
       }
-    </style>
+      .video-panel a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .video-panel a.active::before {
+    opacity: 1;
+  }
+</style>
   </head>
   <body>
     <div class="page">
@@ -124,13 +140,13 @@ const title = "Field Travel";
   <img src="/images/icon-ridge.png" alt="Ridge Icon" style="width: 100%; border-radius: 8px;">
 </a>
     <a href="#" data-audio="audio4" style="position: relative; display: block;">
-  <img src="/images/icon-acunit.png" alt="AC Unit Icon" style="width: 100%; border-radius: 8px;">
+  <img src="/images/" alt="AC Unit Icon" style="width: 100%; border-radius: 8px;">
 </a>
   </div>
-  <audio id="audio1" loop src="/audio/ACmovingChirp_Binaural.mp3"></audio>
-  <audio id="audio2" loop src="/audio/FrontCrow_Binaural.mp3"></audio>
+  <audio id="audio1" loop src="/audio/FrontCrow_Binaural.mp3"></audio>
+  <audio id="audio2" loop src="/audio/StreamCarFront_Binaural.mp3"></audio>
   <audio id="audio3" loop src="/audio/OverlookCarRear_Binaural.mp3"></audio>
-  <audio id="audio4" loop src="/audio/StreamCarFront_Binaural.mp3"></audio>
+  <audio id="audio4" loop src="/audio/ACmovingChirp_Binaural.mp3"></audio>
 </div>
 <script>
   document.querySelectorAll('.video-panel a').forEach(link => {
@@ -157,38 +173,7 @@ const title = "Field Travel";
     });
   });
 </script>
-<style>
-  $1
-.video-panel a::after {
-  content: '▶';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.5rem;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
 
-.video-panel a.active::after {
-  content: '⏸';
-  opacity: 1;
-}
-
-.video-panel a.active::after {
-  content: '⏸';
-  opacity: 1;
-}
-</style>
           <!-- $1 -->
           <!-- $1 -->
         </div>
